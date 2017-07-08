@@ -1,0 +1,25 @@
+{
+	"name": "mediaessenz/cropcheck",
+	"description": "Check TYPO3 crop results via TypoScript, Fluid-Viewhelper, cropVariants",
+	"type": "typo3-cms-extension",
+	"keywords": [
+		"TYPO3 CMS",
+		"Image",
+		"Crop",
+		"Check",
+		"Test"
+	],
+	"homepage": "http://www.typo3-webagentur.com",
+	"license": "GPL-2.0+",
+	"support": {
+		"issues": "http://gitlab.typo3-webagentur.com/mediaessenz/cropcheck/issues"
+	},
+	"extra": {
+		"installer-name": "cropcheck"
+	},
+	"autoload": {
+		"psr-4": {
+			"MediaEssenz\\Cropcheck\\": "Classes/"
+		}
+	}
+}

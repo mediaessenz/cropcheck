@@ -1,0 +1,15 @@
+<h1>Crop Check</h1>
+
+<h2>Crop result using fluid viewhelper</h2>
+
+<f:for each="{sources}" as="source">
+	<f:for each="{sizes}" as="size">
+		<f:for each="{letters}" as="letter">
+			<div>
+				<p><f:format.htmlentities><f:image</f:format.htmlentities> src="EXT:cropcheck/Resources/Public/Images/{source}" width="{size.0}{letter.0}" height="{size.1}{letter.1} alt="{size.0}{letter.0} {size.1}{letter.1}" /></p>
+				<f:image src="EXT:cropcheck/Resources/Public/Images/{source}" width="{size.0}{letter.0}" height="{size.1}{letter.1}" alt="{size.0}{letter.0} {size.1}{letter.1}" />
+			</div>
+			<hr>
+		</f:for>
+	</f:for>
+</f:for>
