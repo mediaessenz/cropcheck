@@ -1,15 +1,153 @@
 <h1>Crop Check</h1>
 
-<h2>Crop result using fluid viewhelper</h2>
-
-<f:for each="{sources}" as="source">
-	<f:for each="{sizes}" as="size">
-		<f:for each="{letters}" as="letter">
-			<div>
-				<p><f:format.htmlentities><f:image</f:format.htmlentities> src="EXT:cropcheck/Resources/Public/Images/{source}" width="{size.0}{letter.0}" height="{size.1}{letter.1} alt="{size.0}{letter.0} {size.1}{letter.1}" /></p>
-				<f:image src="EXT:cropcheck/Resources/Public/Images/{source}" width="{size.0}{letter.0}" height="{size.1}{letter.1}" alt="{size.0}{letter.0} {size.1}{letter.1}" />
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+	<div class="panel panel-default">
+		<div class="panel-heading" role="tab" id="headingOne">
+			<h4 class="panel-title">
+				<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+					Crop result using fluid viewhelper
+				</a>
+			</h4>
+		</div>
+		<div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+			<div class="panel-body">
+				<table class="table">
+					<f:for each="{sources}" as="source">
+						<f:for each="{sizes}" as="size">
+							<f:for each="{letters}" as="letter">
+								<tr>
+									<td>
+										<p>Original</p>
+										<f:image src="EXT:cropcheck/Resources/Public/Images/{source}" alt="Original" />
+									</td>
+									<td>
+										<p><f:format.htmlentities><f:image</f:format.htmlentities> src="{source}" width="{size.0}{letter.0}" height="{size.1}{letter.1}" /></p>
+										<f:image src="EXT:cropcheck/Resources/Public/Images/{source}" width="{size.0}{letter.0}" height="{size.1}{letter.1}" alt="{size.0}{letter.0} {size.1}{letter.1}" />
+									</td>
+								</tr>
+							</f:for>
+						</f:for>
+					</f:for>
+				</table>
 			</div>
-			<hr>
-		</f:for>
-	</f:for>
-</f:for>
+		</div>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-heading" role="tab" id="headingTwo">
+			<h4 class="panel-title">
+				<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+					Crop result using fluid viewhelper with crop variants
+				</a>
+			</h4>
+		</div>
+		<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+			<div class="panel-body">
+				<table class="table">
+					<f:for each="{sources}" as="source">
+						<f:for each="{sizes}" as="size">
+							<f:for each="{letters}" as="letter">
+								<tr>
+									<td>
+										<p>Original</p>
+										<f:image src="EXT:cropcheck/Resources/Public/Images/{source}" alt="Original" />
+									</td>
+									<td>
+										<p><f:format.htmlentities><f:image</f:format.htmlentities> src="{source}" width="{size.0}{letter.0}" height="{size.1}{letter.1}" cropVariant="cropcheck" /></p>
+										<f:image src="EXT:cropcheck/Resources/Public/Images/{source}" width="{size.0}{letter.0}" height="{size.1}{letter.1}" cropVariant="cropcheck" alt="{size.0}{letter.0} {size.1}{letter.1}" />
+									</td>
+								</tr>
+							</f:for>
+						</f:for>
+					</f:for>
+				</table>
+			</div>
+		</div>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-heading" role="tab" id="headingThree">
+			<h4 class="panel-title">
+				<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+					Crop result using fluid viewhelper with crop variants, maxWidth and maxHeight
+				</a>
+			</h4>
+		</div>
+		<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+			<div class="panel-body">
+				<table class="table">
+					<f:for each="{sources}" as="source">
+						<f:for each="{sizes}" as="size">
+							<tr>
+								<td>
+									<p>Original</p>
+									<f:image src="EXT:cropcheck/Resources/Public/Images/{source}" alt="Original" />
+								</td>
+								<td>
+									<p><f:format.htmlentities><f:image</f:format.htmlentities> src="{source}" maxWidth="{size.0}" maxHeight="{size.1}" cropVariant="cropcheck" /></p>
+									<f:image src="EXT:cropcheck/Resources/Public/Images/{source}" maxWidth="{size.0}" maxHeight="{size.1}" cropVariant="cropcheck" alt="maxWidth: {size.0}, maxHeight: {size.1}, cropVariant: cropcheck" />
+								</td>
+							</tr>
+						</f:for>
+					</f:for>
+				</table>
+			</div>
+		</div>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-heading" role="tab" id="heading4">
+			<h4 class="panel-title">
+				<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse4" aria-expanded="false" aria-controls="collapse4">
+					Crop result using fluid viewhelper with crop variants only maxWidth
+				</a>
+			</h4>
+		</div>
+		<div id="collapse4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading4">
+			<div class="panel-body">
+				<table class="table">
+					<f:for each="{sources}" as="source">
+						<f:for each="{sizes}" as="size">
+							<tr>
+								<td>
+									<p>Original</p>
+									<f:image src="EXT:cropcheck/Resources/Public/Images/{source}" alt="Original" />
+								</td>
+								<td>
+									<p><f:format.htmlentities><f:image</f:format.htmlentities> src="{source}" maxWidth="{size.0}" cropVariant="cropcheck" /></p>
+									<f:image src="EXT:cropcheck/Resources/Public/Images/{source}" maxWidth="{size.0}" cropVariant="cropcheck" alt="maxWidth: {size.0}, cropVariant: cropcheck" />
+								</td>
+							</tr>
+						</f:for>
+					</f:for>
+				</table>
+			</div>
+		</div>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-heading" role="tab" id="heading5">
+			<h4 class="panel-title">
+				<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse5" aria-expanded="false" aria-controls="collapse5">
+					Crop result using fluid viewhelper with crop variants with maxWidth, minWidth, maxHeight and minHeight
+				</a>
+			</h4>
+		</div>
+		<div id="collapse5" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading5">
+			<div class="panel-body">
+				<table class="table">
+					<f:for each="{sources}" as="source">
+						<f:for each="{sizes}" as="size">
+							<tr>
+								<td>
+									<p>Original</p>
+									<f:image src="EXT:cropcheck/Resources/Public/Images/{source}" alt="Original" />
+								</td>
+								<td>
+									<p><f:format.htmlentities><f:image</f:format.htmlentities> src="{source}" maxWidth="{size.0}" minWidth="{size.0}" maxHeight="{size.1}" minHeight="{size.1}" cropVariant="cropcheck" /></p>
+									<f:image src="EXT:cropcheck/Resources/Public/Images/{source}" maxWidth="{size.0}" minWidth="{size.0}" maxHeight="{size.1}" minHeight="{size.1}" cropVariant="cropcheck" alt="maxWidth: {size.0}, cropVariant: cropcheck" />
+								</td>
+							</tr>
+						</f:for>
+					</f:for>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
